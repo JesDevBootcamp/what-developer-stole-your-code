@@ -1,3 +1,5 @@
+// Main: Styles for the application root.
+
 @use "forwards" as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Rubik:wght@400;600&display=swap');
@@ -7,9 +9,8 @@
 	flex-flow: column nowrap;
 	justify-content: space-evenly;
 	font-family: 'Rubik', sans-serif;
-	padding: 1rem 1.5rem;
+	@include padding(24px 32px);
 }
-
 
 @include color-schemes using ($color) {
 	:root {
