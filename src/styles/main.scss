@@ -1,0 +1,23 @@
+@use "forwards" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Rubik:wght@400;600&display=swap');
+
+:root {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-evenly;
+	font-family: 'Rubik', sans-serif;
+	padding: 1rem 1.5rem;
+}
+
+
+@include color-schemes using ($color) {
+	:root {
+		background-color: $color;
+		color: high-contrast($light $dark, $color);
+	}
+}
+
+body {
+	margin: 0;
+}
