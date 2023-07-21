@@ -1,0 +1,21 @@
+// App: Styles for the whole application.
+
+@use "forwards" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Rubik:wght@400;600&display=swap');
+
+body {
+	margin: 0;
+	@include color-schemes using ($color) {
+		background-color: $color;
+		color: high-contrast($light $dark, $color);
+	}
+}
+
+#root {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-flow: column nowrap;
+	font-family: 'Rubik', sans-serif;
+}

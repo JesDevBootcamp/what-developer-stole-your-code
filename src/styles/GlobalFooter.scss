@@ -1,0 +1,13 @@
+// Global Footer: Styles for the website footer.
+
+@use "forwards" as *;
+
+.GlobalFooter {
+	display: block;
+	text-align: right;
+	margin-top: auto;
+	@include padding(48px 0 0);
+	@include color-schemes using ($color) {
+		color: contrast-color($gray, $black);
+	}
+}

@@ -1,0 +1,10 @@
+// Content: Styles for self-contained content.
+
+@use "forwards" as *;
+
+.Content {
+	display: block;
+	max-width: 1280px;
+	margin: 0 auto;
+	@include padding(24px 32px);
+}
