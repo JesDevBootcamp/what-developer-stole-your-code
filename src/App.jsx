@@ -28,7 +28,7 @@ export default function App({ data }) {
 			}
 		</main>
 		<Footer disclaimer={thief &&
-			`At least it wasn't ${data.thief.toUpperCase() || "me misplacing it"} again.`
+			`At least it wasn't ${data.thief.toUpperCase() || "you misplacing it"} again.`
 		} />
 	</>;
 }
