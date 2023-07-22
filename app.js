@@ -18,8 +18,10 @@ app.put("/api/:suspect", (req, res) => {
 	// Get suspect from request parameters:
 	const { suspect } = req.params;
 
-	// Add suspect to DATA:
-	DATA.suspects.push(suspect);
+	// Add suspect if not already included:
+	if (false === DATA.suspects.includes(suspect)) {
+		DATA.suspects.push(suspect);
+	}
 
 	// Respond with affirmation:
 	res.send("Added Suspect.");
