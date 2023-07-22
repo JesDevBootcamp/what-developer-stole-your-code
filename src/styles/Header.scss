@@ -5,7 +5,6 @@
 .Header {
 	display: block;
 	text-align: center;
-	font-weight: bold;
 	font-family: 'Oxanium', cursive;
 	@include padding(64px 32px);
 	@include color-schemes using ($color) {
@@ -15,9 +14,14 @@
 		margin: 0.25em 0;
 	}
 	h1 {
-		@include font-size(72px);
+		font-weight: bold;
+		@include font-size(64px);
 	}
 	h2 {
-		@include font-size(32px);
+		font-weight: 400;
+		@include font-size(24px);
+		@include color-schemes using ($color) {
+			color: contrast-color($secondary, $color);
+		}
 	}
 }

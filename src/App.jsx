@@ -4,22 +4,31 @@ import { useState } from "react";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Perpetrator from "./components/Perpetrator";
+import Suspect from "./components/Suspect";
 
 import "./styles/App.scss";
 
-export default function App() {
-	const [content, setContent] = useState({
-		title: "Who Is The Best Developer?",
-		subtitle: "Select the BEST!... or delete the WORST."
-	});
+export default function App({ data }) {
+	// Setup state for the thief:
+	const [thief, setThief] = useState("");
 
 	return <>
 		<Header
-			title={content.title}
-			subtitle={content.subtitle} />
+			title="What Developer Stole Your Code?"
+			subtitle={!thief && "You Probably Misplaced It..."}
+		/>
 		<main id="main">
-			...
+			{thief ?
+				<Perpetrator name={thief} /> :
+				<Suspect callback={() => {
+					let suspects = data.suspects;
+					setThief(suspects[Math.floor(Math.random() * suspects.length)])
+				}} />
+			}
 		</main>
-		<Footer disclaimer="Created by Joshua Elijah Sandoval." />
+		<Footer disclaimer={thief &&
+			`At least it wasn't ${data.thief.toUpperCase() || "me misplacing it"} again.`
+		} />
 	</>;
 }
