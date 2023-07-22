@@ -6,9 +6,7 @@ import DATA from "./database.js";
 const app = express();
 
 // Setup Vite Express and listen to default port:
-ViteExpress.listen(app, 80, () => {
-	console.log("Server is listening on port http://127.0.0.1");
-});
+ViteExpress.listen(app, 80);
 
 // Setup endpoint to respond with all data:
 app.get("/api/", (req, res) => {
