@@ -1,42 +1,53 @@
-// Text Field: Styles for a text input field.
+// Suspect: Styles for the enter suspect form.
 
 @use "forwards" as *;
 
 .Suspect {
 	display: block;
-	max-width: 980px;
-	text-align: center;
-	margin: 2px auto;
-}
-
-.Suspect label {
-	display: block;
-	font-weight: bold;
-	margin: 8px 4px;
-}
-
-.Suspect input,
-.Suspect button {
-	display: inline-block;
-	width: 100%;
-	max-width: 320px;
-	text-transform: uppercase;
-	font-size: 1em;
-	border-radius: 8px;
-	box-shadow: 0 0 8px -4px $gray;
-	padding: 12px;
-	margin: 2px 4px;
-	@include color-schemes using ($color) {
-		border: 1px solid contrast-color($secondary, $color, a11y(aa ui));
-		background-color: $color;
-		color: contrast-color($light $dark, $color);
+	max-width: 640px;
+	margin: 0 auto;
+	label {
+		display: inline-block;
+		font-weight: bold;
+		margin: 8px 4px;
 	}
-}
-
-.Suspect button {
-	width: auto;
-	background-color: $primary;
-	color: contrast-color($light $dark, $primary);
-	padding: 12px 24px;
-	cursor: pointer;
+	span {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 8px;
+	}
+	input, button {
+		display: block;
+		flex: 9999 1 0;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 1em;
+		border-radius: 8px;
+		box-shadow: 0 0 8px -4px $gray;
+		padding: 12px;
+		@include color-schemes using ($color) {
+			border: 1px solid contrast-color($secondary, $color, a11y(aa ui));
+			background-color: $color;
+			color: contrast-color($light $dark, $color);
+		}
+	}
+	button {
+		flex: 1 1 0;
+		border-radius: 12px;
+		background-color: $success;
+		color: contrast-color($success, $success);
+		padding: 12px 24px;
+		cursor: pointer;
+		&:hover, &:focus {
+			background-color: shade($success, 10%);
+		}
+		&:active {
+			background-color: shade($success, 15%);
+		}
+		@include color-schemes using ($color) {
+			border: 1px solid contrast-color($success, $color, a11y(aa ui));
+		}
+	}
 }

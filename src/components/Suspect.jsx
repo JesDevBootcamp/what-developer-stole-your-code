@@ -21,8 +21,10 @@ export default function Suspect({ callback }) {
 			<label htmlFor="suspect">
 				Who Do You Suspect?
 			</label>
-			<input id="suspect" required minLength="3" type="text" />
-			<button type="submit">Submit</button>
+			<span>
+				<input id="suspect" required minLength="3" type="text" />
+				<button type="submit">Submit</button>
+			</span>
 		</form>
 	);
 }
