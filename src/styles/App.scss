@@ -19,3 +19,10 @@ body {
 	flex-flow: column nowrap;
 	font-family: 'Rubik', sans-serif;
 }
+
+#main {
+	display: block;
+	max-width: 1280px;
+	margin: 0 auto;
+	@include padding(24px 32px);
+}

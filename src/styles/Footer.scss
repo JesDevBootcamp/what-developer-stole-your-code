@@ -2,11 +2,11 @@
 
 @use "forwards" as *;
 
-.GlobalFooter {
+.Footer {
 	display: block;
 	text-align: right;
 	margin-top: auto;
-	@include padding(48px 0 0);
+	@include padding(48px 32px 24px);
 	@include color-schemes using ($color) {
 		color: contrast-color($gray, $black);
 	}

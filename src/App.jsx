@@ -1,20 +1,16 @@
 // App: Component containing the entire website.
 
-import Content from "./components/Content";
-import GlobalFooter from "./components/GlobalFooter";
-import GlobalHeader from "./components/GlobalHeader";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+
 import "./styles/App.scss";
 
 export default function App() {
 	return <>
-		<GlobalHeader>
-			Who Is The Best Developer?
-		</GlobalHeader>
-		<Content>
+		<Header title="Who Is The Best Developer?" />
+		<main id="main">
 			...
-		</Content>
-		<GlobalFooter>
-			Created by Joshua Elijah Sandoval.
-		</GlobalFooter>
+		</main>
+		<Footer disclaimer="Created by Joshua Elijah Sandoval." />
 	</>;
 }
