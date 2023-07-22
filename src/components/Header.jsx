@@ -2,8 +2,11 @@
 
 import "../styles/Header.scss";
 
-export default function Header({ title }) {
+export default function Header({ title, subtitle }) {
 	return (
-		<h1 className="Header">{title}</h1>
+		<header className="Header">
+			<h1>{title}</h1>
+			<h2>{subtitle}</h2>
+		</header>
 	);
 }

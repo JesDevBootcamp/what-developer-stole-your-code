@@ -7,10 +7,17 @@
 	text-align: center;
 	font-weight: bold;
 	font-family: 'Oxanium', cursive;
-	margin: 0;
-	@include font-size(72px);
 	@include padding(64px 32px);
 	@include color-schemes using ($color) {
 		text-shadow: 0 0.15em 0.35em color-shift($color, 20%);
+	}
+	h1, h2 {
+		margin: 0.25em 0;
+	}
+	h1 {
+		@include font-size(72px);
+	}
+	h2 {
+		@include font-size(32px);
 	}
 }
