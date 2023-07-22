@@ -26,7 +26,7 @@ export default function App({ data }) {
 				<Suspect callback={() => {
 					const suspects = data.suspects;
 					const index = Math.floor(Math.random() * suspects.length);
-					setThief(suspects[index].toUpperCase());
+					setThief(suspects[index]);
 				}} /> :
 				// Display the thefty perpetrator!:
 				<Perpetrator name={thief} />
