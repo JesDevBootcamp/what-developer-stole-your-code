@@ -6,6 +6,7 @@
 
 *, ::before, ::after {
 	box-sizing: border-box;
+	max-width: 100%;
 }
 
 body {
@@ -22,6 +23,7 @@ body {
 	display: flex;
 	flex-flow: column nowrap;
 	font-family: 'Rubik', sans-serif;
+	word-wrap: break-word;
 }
 
 #main {
