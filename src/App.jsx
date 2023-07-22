@@ -16,19 +16,24 @@ export default function App({ data }) {
 	return <>
 		<Header
 			title="What Developer Stole Your Code?"
-			subtitle={!thief && "You Probably Misplaced It..."}
+			subtitle={
+				!thief && "You Probably Misplaced It..."
+			}
 		/>
 		<main id="main">
-			{thief ?
-				<Perpetrator name={thief} /> :
+			{!thief ?
+				// Set thief to a random suspect when submitting new one:
 				<Suspect callback={() => {
-					let suspects = data.suspects;
-					setThief(suspects[Math.floor(Math.random() * suspects.length)])
-				}} />
+					const suspects = data.suspects;
+					const index = Math.floor(Math.random() * suspects.length);
+					setThief(suspects[index].toUpperCase());
+				}} /> :
+				// Display the thefty perpetrator!:
+				<Perpetrator name={thief} />
 			}
 		</main>
-		<Footer disclaimer={thief &&
-			`At least it wasn't ${data.thief.toUpperCase() || "you misplacing it"} again.`
+		<Footer disclaimer={
+			thief && `At least it wasn't ${data.thief || "me"} again.`
 		} />
 	</>;
 }
