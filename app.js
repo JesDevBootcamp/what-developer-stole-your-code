@@ -15,38 +15,35 @@ app.get("/api/", (req, res) => {
 	res.json(DATA);
 });
 
-// Setup endpoint to add name:
-app.put("/api/:name", (req, res) => {
-	// Get name from request parameters:
-	const { name } = req.params;
+// Setup endpoint to add suspect:
+app.put("/api/:suspect", (req, res) => {
+	// Get suspect from request parameters:
+	const { suspect } = req.params;
 
-	// Add name to DATA:
-	DATA.push(name);
+	// Add suspect to DATA:
+	DATA.suspects.push(suspect);
 
 	// Respond with affirmation:
-	res.send("Added Data");
+	res.send("Added Suspect.");
 });
 
-// Setup endpoint to update name:
-app.post("/api/:name/:newName", (req, res) => {
-	// Get name and newName within DATA:
-	const { name, newName } = req.params;
+// Setup endpoint to update thief name:
+app.post("/api/:thief", (req, res) => {
+	// Get name of thief within parameters:
+	const { thief } = req.params;
 
-	// Find the index of name within DATA:
-	const index = DATA.findIndex(el => el === name);
-
-	// Update name with newName within DATA:
-	DATA[index] = newName;
+	// Update thief value:
+	DATA.thief = thief;
 
 	// Respond with affirmation:
-	res.send("Updated Name.");
+	res.send("Updated Thief.");
 });
 
 // Setup endpoint to delete name:
 app.delete("/api/:name", (req, res) => {
 	// Find the index of name within DATA:
 	const { name } = req.params;
-	const index = DATA.findIndex(el => el === name);
+	const index = DATA.suspects.findIndex(el => el === name);
 
 	// Send a 404 status if name is not found:
 	if (index === -1) {
@@ -55,7 +52,7 @@ app.delete("/api/:name", (req, res) => {
 	}
 
 	// Remove name from DATA:
-	DATA.splice(index, 1);
+	DATA.suspects.splice(index, 1);
 
 	// Respond with affirmation:
 	res.send("Deleted Name.");
