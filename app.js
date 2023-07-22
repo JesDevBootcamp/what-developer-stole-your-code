@@ -28,7 +28,7 @@ app.put("/api/:suspect", (req, res) => {
 });
 
 // Setup endpoint to update thief name:
-app.post("/api/:thief", (req, res) => {
+app.post("/api/thief/:thief", (req, res) => {
 	// Get name of thief within parameters:
 	const { thief } = req.params;
 
